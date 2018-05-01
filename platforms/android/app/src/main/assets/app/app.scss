@@ -1,0 +1,100 @@
+// Import app variables
+@import 'app-variables';
+
+// Import the theme’s main ruleset - both index and platform specific.
+@import '~nativescript-theme-core/scss/index';
+@import '~nativescript-theme-core/scss/platforms/index.android';
+
+// Import common styles
+@import 'app-common';
+
+// Place any CSS rules you want to apply only on Android here
+
+*{
+    font-family: "OpenSansRegular";
+    text-align: center;
+    font-size: 16;
+    
+}
+
+
+ActionBar .fa {
+    padding: 40px;
+    color: #000;
+}
+
+Page {
+    background-image: url("~/images/fondo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+TextField {
+    border-width: 1;
+    border-color: $border-tex;
+    border-radius: 5;
+    margin: 10;
+}
+
+.btn1{
+    background-color: $accent-dark;
+    margin: 10;
+}
+
+.btn2{
+    background-color: $accent-light;
+    margin: 10;
+}
+
+.title{
+    font-family: "RighteousRegular";
+    text-align: center;
+    font-size: 30;
+    margin: 10;
+}
+
+.sub-title{
+    font-family: "RighteousRegular";
+    text-align: center;
+    font-size: 20;
+    margin: 10;
+}
+
+.subttitle{
+    font-family: "RighteousRegular";
+    text-align: left;
+    font-size: 18;
+    margin: 10;
+}
+
+.op-title{
+    font-family: "RighteousRegular";
+    text-align: left;
+    font-size: 18;
+    margin: 10;
+    margin-right: -50 !important;
+    vertical-align: center;
+}
+
+.separador{
+    border-bottom-width: 0.5;
+    border-color: $border-tex;
+    margin-top: 5;
+    margin-right: 5;
+}
+
+.tarjetas{
+    border-bottom-width: 0.5;
+    border-bottom-color: $border-tex;
+    margin: 10;
+}
+
+.cardStyle {
+    background-color: transparent;
+    border-width: 2;
+    border-color: $accent-dark;
+}

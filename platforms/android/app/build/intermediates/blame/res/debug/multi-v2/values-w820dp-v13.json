@@ -1,0 +1,36 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\Personal\\Desktop\\ProyectosOscar\\ProyectoMovil\\VetsCol\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Personal\\.gradle\\caches\\transforms-1\\files-1.1\\Feedback-release.aar\\4c16e560ad0ff468e90a3c80d90ba0aa\\res\\values-w820dp-v13\\values-w820dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "57",
+                        "endOffsets": "108"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Personal\\.gradle\\caches\\transforms-1\\files-1.1\\alerter-1.0.6.aar\\788fbfcd7478de2173c229f65b5cb652\\res\\values-w820dp-v13\\values-w820dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "113",
+                        "endColumns": "65",
+                        "endOffsets": "174"
+                    }
+                }
+            ]
+        }
+    ]
+}

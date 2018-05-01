@@ -1,0 +1,12 @@
+<ActionBar class="action-bar">
+    <NavigationButton text="Atras" height="15" width="15" android.systemIcon="ic_menu_back" (tap)="getBack()"></NavigationButton>
+    <Label class="action-bar-title" [text]="_title"></Label>
+</ActionBar>
+<ScrollView>
+    <StackLayout class="page">
+        <Label class="sub-title" [text]="_subtitle" textWrap="true"></Label>
+        <TextField hint="Nombre" [(ngModel)]="_dataService._nombreServicioVet" [text]="_dataService._nombreServicioVet" maxLength="60"></TextField>
+        <TextField hint="Descripcion" [(ngModel)]="_dataService._descripcionServicioVet" [text]="_dataService._descripcionServicioVet"  maxLength="180"></TextField>
+        <Button class="btn1" [text]="_nameButton" (tap)="validateTypeFunction()"></Button>
+    </StackLayout>
+</ScrollView>

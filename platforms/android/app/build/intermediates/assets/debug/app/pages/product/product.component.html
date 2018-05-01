@@ -1,0 +1,55 @@
+<ActionBar class="action-bar">
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android because ActionItems are shown on the right side of the ActionBar
+    -->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the NavigationButton as a side-drawer button in iOS is not possible, because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()" ios.position="left">
+    </ActionItem>
+    <ActionItem *ngIf="_addService" (tap)="addProducts()" ios.systemIcon="4" ios.position="right" android.systemIcon="ic_input_add"
+        android.position="actionBar"></ActionItem>
+    <Label class="action-bar-title" text="Productos"></Label>
+</ActionBar>
+
+<!--
+RadSideDrawer is a UI component part of the Progress NativeScript UI set of components.
+Learn more about the RadSideDrawer UI component and how it can be customized in this documentation article:
+http://docs.telerik.com/devtools/nativescript-ui/Controls/Angular/SideDrawer/getting-started
+The RadSideDrawer component is designed to be used as a root element and
+it shouldn't have any other siblings other than the <ActionBar> component.
+-->
+<RadSideDrawer #drawer showOverNavigation="true" [drawerTransition]="sideDrawerTransition">
+    <!--
+    Use the tkDrawerContent directive to display the content of the app drawer on this page.
+    -->
+    <StackLayout tkDrawerContent>
+        <MyDrawer [selectedPage]="'product'"></MyDrawer>
+    </StackLayout>
+
+    <!--
+    Use the tkMainContent directive to display the content of the page when you have an app drawer.
+    -->
+    <GridLayout style="background-color:transparent" tkMainContent>
+        <!-- <Label class="page-icon fa" text="&#xf005;"></Label>
+        <Label class="page-placeholder" text="<!-- Page content goes here "></Label>-->
+        <StackLayout *ngIf="_viewAdd" style="vertical-align: center">
+                <Image src="~/images/sinRegistroPro.png"></Image>
+            </StackLayout>
+        <StackLayout>
+            <ScrollView>
+                <WrapLayout orientation="horizontal" class="listas">
+                    <GridLayout height="150" rows="*,*" columns="*,*" class="separador" *ngFor="let item of arregloProductos">
+                        <Label row="0" col="1" class="new-title" horizontalAlignment="center" [text]="item.title" (tap)="viewdescripcion(item.id,item.nombre)"></Label>
+                        <Label row="0" col="0" class="op-title" [text]="item.title" textWrap="true"></Label>
+                        <Image row="0" col="2" horizontalAlignment="right" class="delete" height="20" width="20" src="~/images/cancel.png" (tap)="deleteProducts(item.idProduct,item.title)"></Image>
+                        <Label textWrap="true" row="0" col="1" class="new-subtitle" horizontalAlignment="center" [text]="item.description" (tap)="viewdescripcion(item.id,item.nombre)"></Label>
+                        <Label class="price" row="0" col="1" [text]="item.price" textWrap="true"></Label>
+                        <Image class="image" height="100" row="0" col="0" [src]="item.image"></Image>
+                    </GridLayout>
+                </WrapLayout>
+            </ScrollView>
+        </StackLayout>
+    </GridLayout>
+</RadSideDrawer>

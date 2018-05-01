@@ -1,0 +1,18 @@
+<ActionBar class="action-bar">
+    <NavigationButton text="Atras" height="15" width="15" android.systemIcon="ic_menu_back" (tap)="getBack()"></NavigationButton>
+    <Label class="action-bar-title" text="Administra Tu Perfil"></Label>
+    <ActionItem (tap)="_editarDatos()" ios.systemIcon="2" ios.position="right" android.systemIcon="ic_menu_edit" android.position="actionBar"></ActionItem>
+</ActionBar>
+<ScrollView height="100%">
+    <StackLayout>
+        <TextField [editable]="_editar" hint="Nombre" [(ngModel)]="_datosUsuario._nombre" [text]="_nombre"></TextField>
+        <TextField editable="false" hint="Correo" [(ngModel)]="_datosUsuario._correo" [text]="_correo" keyboardType="email"></TextField>
+        <TextField [editable]="_editar" hint="Celular" [(ngModel)]="_datosUsuario._celular" [text]="_celular" keyboardType="number"
+            maxLength="10"></TextField>
+        <Button *ngIf="_viewUpdate" class="btn1" text="Actualizar" (tap)="updateData()"></Button>
+        <StackLayout style="margin-top:180">
+            <Label class="separador" text="" textWrap="true"></Label>
+            <Label class="m-t-150 sub-title" text="Cerrar Sesión" textWrap="true" (tap)="cerrarSesion()"></Label>
+        </StackLayout>
+    </StackLayout>
+</ScrollView>

@@ -1,0 +1,80 @@
+<ActionBar class="action-bar">
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android because ActionItems are shown on the right side of the ActionBar
+    -->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the NavigationButton as a side-drawer button in iOS is not possible, because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()" ios.position="left">
+    </ActionItem>
+    <Label class="action-bar-title" text="Configuraciones"></Label>
+</ActionBar>
+
+<!--
+RadSideDrawer is a UI component part of the Progress NativeScript UI set of components.
+Learn more about the RadSideDrawer UI component and how it can be customized in this documentation article:
+http://docs.telerik.com/devtools/nativescript-ui/Controls/Angular/SideDrawer/getting-started
+The RadSideDrawer component is designed to be used as a root element and
+it shouldn't have any other siblings other than the <ActionBar> component.
+-->
+<RadSideDrawer #drawer showOverNavigation="true" [drawerTransition]="sideDrawerTransition">
+    <!--
+    Use the tkDrawerContent directive to display the content of the app drawer on this page.
+    -->
+    <StackLayout tkDrawerContent>
+        <MyDrawer [selectedPage]="'Settings'"></MyDrawer>
+    </StackLayout>
+
+    <!--
+    Use the tkMainContent directive to display the content of the page when you have an app drawer.
+    -->
+    <GridLayout style="background-color:transparent" tkMainContent>
+        <ScrollView>
+            <StackLayout>
+                <!-- <Button class="btn1" text="Perfil" (tap)="perfil()"></Button>
+                <Button class="btn1" text="Ayuda" (tap)="ayuda()"></Button>
+                <Button class="btn1" text="Facturación" (tap)="facturacion()"></Button>
+                <Button class="btn1" text="Acerca De" (tap)="acerca()"></Button>
+                <Button class="btn1" text="Terminos de Uso" (tap)="terminos()"></Button>
+                <Label class="separador" text="" textWrap="true"></Label>-->
+                <WrapLayout  (tap)="profile()">
+                    <GridLayout row="0" col="0" rows="*" columns="*,*" class="services" height="70">
+                        <Label row="0" col="0" class="op-title" text="Perfil" textWrap="true"></Label>
+                        <Label row="0" col="0" horizontalAlignment="left" text="Administra tu perfil" class="txt" textWrap="true"></Label>
+                        <Image row="0" col="1" horizontalAlignment="right" class="edit" height="20" width="20" src="~/images/rightRow.png"></Image>
+                    </GridLayout>
+                </WrapLayout>
+                <WrapLayout (tap)="viewAllPage('ayuda')">
+                    <GridLayout row="0" col="0" rows="*" columns="*,*" class="services" height="70" >
+                        <Label row="0" col="0" class="op-title" text="Ayuda" textWrap="true"></Label>
+                        <Label row="0" col="0" horizontalAlignment="left" text="¿ En qué podemos ayudarte ?" class="txt" textWrap="true"></Label>
+                        <Image row="0" col="1" horizontalAlignment="right" class="edit" height="20" width="20" src="~/images/rightRow.png"></Image>
+                    </GridLayout>
+                </WrapLayout>
+                <WrapLayout (tap)="viewAllPage('facturacion')">
+                    <GridLayout row="0" col="0" rows="*" columns="*,*" class="services" height="70" >
+                        <Label row="0" col="0" class="op-title" text="Facturación" textWrap="true"></Label>
+                        <Label row="0" col="0" horizontalAlignment="left" text="Conoce nuestros beneficios e inversión" class="txt" textWrap="true"></Label>
+                        <Image row="0" col="1" horizontalAlignment="right" class="edit" height="20" width="20" src="~/images/rightRow.png"></Image>
+                    </GridLayout>
+                </WrapLayout>
+                <WrapLayout >
+                    <GridLayout row="0" col="0" rows="*" columns="*,*" class="services" height="70" (tap)="viewAllPage('acerca')">
+                        <Label row="0" col="0" class="op-title" text="Acerca De" textWrap="true"></Label>
+                        <Label row="0" col="0" horizontalAlignment="left" text="¿ Quieres saber que es VetsCol ?" class="txt" textWrap="true"></Label>
+                        <Image row="0" col="1" horizontalAlignment="right" class="edit" height="20" width="20" src="~/images/rightRow.png"></Image>
+                    </GridLayout>
+                </WrapLayout>
+                <WrapLayout >
+                    <GridLayout row="0" col="0" rows="*" columns="*,*" class="services" height="70" (tap)="viewTerms()">
+                        <Label row="0" col="0" class="op-title" text="Términos de Uso" textWrap="true"></Label>
+                        <Label row="0" col="0" horizontalAlignment="left" text="Conoce nuestros métodos y reglas de uso" class="txt" textWrap="true"></Label>
+                        <Image row="0" col="1" horizontalAlignment="right" class="edit" height="20" width="20" src="~/images/rightRow.png"></Image>
+                    </GridLayout>
+                </WrapLayout>
+                <Label text="Versión 1.0" textWrap="true"></Label>
+            </StackLayout>
+        </ScrollView>
+    </GridLayout>
+</RadSideDrawer>

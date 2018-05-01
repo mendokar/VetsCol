@@ -1,0 +1,10 @@
+<ScrollView>
+    <StackLayout style="vertical-align: center;">
+        <StackLayout style="vertical-align: center;">
+            <!--<Image class="icons" src="res://icon"></Image>-->
+            <Label class="sub-title" [text]="_mensaje" textWrap="true"></Label>
+            <TextField hint="Correo" [(ngModel)]="_datosUsuario._correo" [text]="_datosUsuario._correo"></TextField>            
+        </StackLayout>
+        <Button class="btn1" text="Confirmar Correo" (tap)="validateEmail()"></Button>
+    </StackLayout>
+</ScrollView>

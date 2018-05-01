@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">711941266510-fs89hftsu3bsbbdjeufhm1ph4gq0ulo0.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://vetscol-1.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">711941266510</string>
+    <string name="google_api_key" translatable="false">AIzaSyBNstwMowOYxO-T0HKy8zPZkRNAWI0VXjA</string>
+    <string name="google_app_id" translatable="false">1:711941266510:android:e8fcc4118ae2055c</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBNstwMowOYxO-T0HKy8zPZkRNAWI0VXjA</string>
+    <string name="google_storage_bucket" translatable="false">vetscol-1.appspot.com</string>
+    <string name="project_id" translatable="false">vetscol-1</string>
+</resources>

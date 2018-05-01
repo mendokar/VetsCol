@@ -1,0 +1,46 @@
+.services{
+    border-bottom-color:#d3d3d3;
+    border-bottom-width:1
+}
+
+.new-title{
+    font-family: 'Gecko';
+    font-size: 26;
+    margin-top: -40;
+    margin-left: 5;
+
+}
+
+.new-subtitle{
+    vertical-align: center;
+    text-align: center;
+    margin-right: 5;
+    margin-top: 120 !important;
+    margin-left: -20;
+    text-justify: center;
+    color: black;
+    height: 80;
+}
+
+.new-descripcion{
+    margin: 5;
+
+}
+
+.image{
+    margin-top: 100;
+    margin-left: -20;
+    height: 100;
+    width: 100;
+    vertical-align: center;
+    border-radius: 50%;
+}
+
+.price{
+    vertical-align: center;
+}
+
+.delete{
+    vertical-align: top;
+    margin: 5;
+}

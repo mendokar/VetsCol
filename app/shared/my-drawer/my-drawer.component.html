@@ -1,0 +1,37 @@
+<!--
+The MyDrawer custom component view is where you define what will be displayed in the app drawer.
+Feel free to customize layouts and components to change how your app drawer looks.
+-->
+<GridLayout rows="auto, *" class="sidedrawer sidedrawer-left">
+    <StackLayout row="0" class="sidedrawer-header">
+        <!--<Label (tap)="viewProfile()" class="sidedrawer-header-image fa" text="&#xf2bd;"></Label>-->
+       <StackLayout style="vertical-align: center;">
+        <Label class="titles" text=" ! Hola !" textWrap="true"></Label>
+        
+        <Label class="subtitles"  [text]="_nameUser"></Label>
+       </StackLayout>
+        <!--<Label class="sidedrawer-header-brand" [text]="_nameVets"></Label>-->
+    </StackLayout>
+
+    <ScrollView row="1">
+        <StackLayout class="sidedrawer-content">
+            <MyDrawerItem title="Inicio" route="/home" icon="&#xf015;" [isSelected]="isPageSelected('Home')">
+            </MyDrawerItem>
+            <MyDrawerItem title="Mi Veterinaria" route="/create-vets" icon="&#xf2c2;" [isSelected]="isPageSelected('Browse')">
+            </MyDrawerItem>
+            <MyDrawerItem title="Servicios" route="/search" icon="&#xf004;" [isSelected]="isPageSelected('Search')">
+            </MyDrawerItem>            
+           <MyDrawerItem title="Productos" route="/product" icon="&#xf290;" [isSelected]="isPageSelected('product')">
+            </MyDrawerItem>
+            <MyDrawerItem title="Promociones" route="/promotions" icon="&#xf02c;" [isSelected]="isPageSelected('promotions')">
+            </MyDrawerItem>
+            <MyDrawerItem title="Comentarios" route="/comments" icon="&#xf086;" [isSelected]="isPageSelected('comments')">
+            </MyDrawerItem>
+            <MyDrawerItem title="Asesorias" route="/advices" icon="&#xf0c0;" [isSelected]="isPageSelected('advices')">
+            </MyDrawerItem>
+            <StackLayout class="hr-light"></StackLayout>
+            <MyDrawerItem title="Configuraciones" route="/settings" icon="&#xf013;" [isSelected]="isPageSelected('Settings')">
+            </MyDrawerItem>
+        </StackLayout>
+    </ScrollView>
+</GridLayout>

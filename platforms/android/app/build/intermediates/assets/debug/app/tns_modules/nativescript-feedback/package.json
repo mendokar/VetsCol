@@ -1,0 +1,89 @@
+{
+  "_args": [
+    [
+      "nativescript-feedback@1.1.2",
+      "C:\\Users\\Personal\\Desktop\\ProyectosOscar\\ProyectoMovil\\VetsCol"
+    ]
+  ],
+  "_from": "nativescript-feedback@1.1.2",
+  "_id": "nativescript-feedback@1.1.2",
+  "_inBundle": false,
+  "_integrity": "sha1-3Na8CTSR9K7B0ySHlTeZZlaKcxQ=",
+  "_location": "/nativescript-feedback",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "nativescript-feedback@1.1.2",
+    "name": "nativescript-feedback",
+    "escapedName": "nativescript-feedback",
+    "rawSpec": "1.1.2",
+    "saveSpec": null,
+    "fetchSpec": "1.1.2"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/nativescript-feedback/-/nativescript-feedback-1.1.2.tgz",
+  "_spec": "1.1.2",
+  "_where": "C:\\Users\\Personal\\Desktop\\ProyectosOscar\\ProyectoMovil\\VetsCol",
+  "author": {
+    "name": "Eddy Verbruggen",
+    "email": "eddyverbruggen@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/EddyVerbruggen/nativescript-feedback/issues"
+  },
+  "description": "Non-blocking textual feedback for your NativeScript app. AKA superfancy Toasts!",
+  "devDependencies": {
+    "tns-core-modules": "~3.4.0",
+    "tns-platform-declarations": "~3.4.0",
+    "tslint": "^5.0.0",
+    "typescript": "~2.6.0"
+  },
+  "homepage": "https://github.com/EddyVerbruggen/nativescript-feedback",
+  "keywords": [
+    "ecosystem:nativescript",
+    "NativeScript",
+    "JavaScript",
+    "Android",
+    "iOS",
+    "Feedback",
+    "Notification",
+    "Message",
+    "Toast",
+    "Snackbar"
+  ],
+  "license": "MIT",
+  "main": "feedback",
+  "name": "nativescript-feedback",
+  "nativescript": {
+    "platforms": {
+      "android": "2.5.0",
+      "ios": "2.5.0"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EddyVerbruggen/nativescript-feedback.git"
+  },
+  "scripts": {
+    "build": "npm i && npm run tsc",
+    "ci.tslint": "npm i && tslint '**/*.ts' --config '../tslint.json' --exclude '**/node_modules/**'",
+    "clean": "cd ../demo && rimraf hooks node_modules platforms && cd ../src && rimraf node_modules && npm run plugin.link",
+    "demo.android": "npm i && npm run tsc && cd ../demo && tns run android --syncAllFiles",
+    "demo.ios": "npm i && npm run tsc && cd ../demo && tns run ios --syncAllFiles",
+    "demo.reset": "cd ../demo && rimraf platforms",
+    "plugin.link": "npm link && cd ../demo && npm link nativescript-feedback && cd ../src",
+    "plugin.prepare": "npm run tsc && cd ../demo && tns plugin remove nativescript-feedback && tns plugin add ../src",
+    "plugin.tscwatch": "npm run tsc -- -w",
+    "postclone": "npm i && cd ../demo && npm i && cd ../src && npm run plugin.link",
+    "setup": "npm run build && cd ../demo && npm i",
+    "test.android": "npm i && npm run tsc && npm run tslint && cd ../demo && tns build android && tns test android --justlaunch",
+    "test.ios": "npm i && npm run tsc && npm run tslint && cd ../demo && tns build ios && tns test ios --justlaunch",
+    "tsc": "tsc -skipLibCheck",
+    "tslint": "cd .. && tslint \"**/*.ts\" --config tslint.json --exclude \"**/node_modules/**\""
+  },
+  "typings": "index.d.ts",
+  "version": "1.1.2"
+}
